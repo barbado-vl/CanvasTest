@@ -1,0 +1,31 @@
+﻿<Window x:Class="CanvasTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CanvasTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,5">
+            <Button Content="Open" Width="70" Click="ClickOpenInputImage" Height="20"/>
+            <Button Content="Contours" Width="70" Height="20" Click="ClickFindContours"/>
+            <Button Content="Line" Width="70" Height="20" Click="DrawLine"/>
+        </WrapPanel>
+        <local:ZoomBorder x:Name="brdrOne" Grid.Row="1" ClipToBounds="True" Grid.ColumnSpan="2">
+            <Canvas x:Name="myCanvas">
+
+            </Canvas>
+        </local:ZoomBorder>
+
+    </Grid>
+</Window>
